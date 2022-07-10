@@ -22,7 +22,7 @@
 
   
 
-  <title>Hello World | scooo</title>
+  <title>VScode &amp;&amp; Arduino FAQs | scooo</title>
 
   
 
@@ -96,16 +96,18 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">Hello World</h1>
+          <h1 class="title-wrap">VScode &amp;&amp; Arduino FAQs</h1>
           <h2 class="title-sub-wrap">
             <strong>scooo</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-07-08T14:42:11.849Z" itemprop="datePublished">2022-07-08</time>
+            <time  class="article-date" datetime="2022-07-10T11:57:30.000Z" itemprop="datePublished">2022-07-10</time>
           </h2>
           <ul class="wrap-list dark">
   
 </ul>
           <ul class="wrap-list dark">
+  
+    <li><a href="/tags/FAQs/">🏷️ FAQs</a></li>
   
 </ul>
         </div>
@@ -147,25 +149,22 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <h1 id="使用VScode开发Arduino"><a href="#使用VScode开发Arduino" class="headerlink" title="使用VScode开发Arduino"></a>使用VScode开发Arduino</h1><p>在VScode中开发Arduino ，会出现<font color="#dd0000">  <strong>#include</strong>出现红色下划线</font></p>
+<p>1.安装arduino1.8.7，1.8.7以上编译会乱码<br>2.用vscode打开一个空文件夹，新建xxx.ino文件，ino文件名和文件夹名相同;<br>3.在右下方选择好开发板后,在”.vscode”文件夹中添加：    <strong>settings.json</strong>。</p>
+<p>打开settings.json写入:</p>
+<p><strong>settings.json:</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;C_Cpp.errorSquiggles&quot;</span>:<span class="string">&quot;Disabled&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>解决:<br><img src="D:\blog\source_posts\arduino.jpg" alt="完成"></p>
 
       </section>
 
       
       
         <nav class="article-nav">
+          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
@@ -178,11 +177,10 @@
           <h2 class="card-text--title text-ellipsis">Hexo FAQs</h2>
         </a>
       
-      <div class="card-text--row">Newer</div>
+      <div class="card-text--row">Older</div>
     </div>
   </article>
 </div>
-          
           
         </nav>
       
