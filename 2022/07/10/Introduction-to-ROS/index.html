@@ -22,7 +22,7 @@
 
   
 
-  <title>VScode &amp;&amp; Arduino FAQs | scooo</title>
+  <title>Introduction to ROS | scooo</title>
 
   
 
@@ -45,7 +45,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://img-blog.csdnimg.cn/20200331160532548.jpg)"></div>
+    <div class="post-image" style="background-image: url(https://pic.rmb.bdstatic.com/bjh/1bc6488cff7b82b4240b715248fe169e.jpeg)"></div>
   
 
   <!-- navbar -->
@@ -96,18 +96,18 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">VScode &amp;&amp; Arduino FAQs</h1>
+          <h1 class="title-wrap">Introduction to ROS</h1>
           <h2 class="title-sub-wrap">
             <strong>scooo</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-07-10T11:57:30.000Z" itemprop="datePublished">2022-07-10</time>
+            <time  class="article-date" datetime="2022-07-10T15:58:45.000Z" itemprop="datePublished">2022-07-10</time>
           </h2>
           <ul class="wrap-list dark">
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/FAQs/">🏷️ FAQs</a></li>
+    <li><a href="/tags/ROS/">🏷️ ROS</a></li>
   
 </ul>
         </div>
@@ -149,15 +149,173 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="使用VScode开发Arduino"><a href="#使用VScode开发Arduino" class="headerlink" title="使用VScode开发Arduino"></a>使用VScode开发Arduino</h1><p>在VScode中开发Arduino ，会出现<font color="#dd0000">  <strong>#include</strong>出现红色下划线</font></p>
-<p>1.安装arduino1.8.7，1.8.7以上编译会乱码<br>2.用vscode打开一个空文件夹，新建xxx.ino文件，ino文件名和文件夹名相同;<br>3.在右下方选择好开发板后,在”.vscode”文件夹中添加：    <strong>settings.json</strong>。</p>
-<p>打开settings.json写入:</p>
-<p><strong>settings.json:</strong></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;C_Cpp.errorSquiggles&quot;</span>:<span class="string">&quot;Disabled&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <blockquote>
+<p>　　　　ROS可以形象的描述为一个工厂的运行机制，创建好一个工作空间(workspace)就像一个工厂，工厂里又有好多个生产车间，每个功能包（pkg）看作是一个生产车间，每个生产车间又有好多工人在配合，每个节点（node）看作是一个工人，节点是又是可执行程序的最小单位，工人们之间相互沟通通过消息（mesage）来完成.</p>
+</blockquote>
+<h3 id="ROS-Master-节点管理器"><a href="#ROS-Master-节点管理器" class="headerlink" title="ROS Master 节点管理器"></a>ROS Master 节点管理器</h3><p><img src="https://img-blog.csdnimg.cn/20200729170450220.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pha2VYWQ==,size_16,color_FFFFFF,t_70" alt="ROS Master"></p>
+<ul>
+<li>节点将所有信息发送给ROS Master</li>
+<li>发送信息的节点称为发布节点(Publisher Nodes)</li>
+<li>接收信息的节点称为订阅节点(Subscriber Nodes)</li>
+<li>ROS Master拥有在计算机上正在运行的所有发送节点和接收节点的信息.</li>
+</ul>
+<p>例如: 节点1发送给某个名为a的数据,而节点2订阅了该消息,那么ROS Masker就向两个节点广播彼此节点信息,以帮助他们建立连接,这样两个节点就能互相通信了.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roscore</span><br></pre></td></tr></table></figure>
 
-
-
-<p>完成:<img src="https://img-blog.csdnimg.cn/20200331160532548.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pha2VYWQ==,size_16,color_FFFFFF,t_70#pic_center" alt="完成"></p>
+<p>输入这个命令来开启 ROS Master</p>
+<h3 id="ROS-Messages-通信架构"><a href="#ROS-Messages-通信架构" class="headerlink" title="ROS Messages 通信架构"></a>ROS Messages 通信架构</h3><p>ROS节点可以彼此间互相传送不同数据类型,这些数据称为ROS消息(ROS Messages).有了ROS Messages就能在节点之间传递各种类型的数据了.这些消息通过一种类似于数据总线或者路径标识的媒介进行传播,称为ROS话题(Topics).</p>
+<h4 id="话题（topic）"><a href="#话题（topic）" class="headerlink" title="话题（topic）"></a>话题（topic）</h4><p>　　话题是单向的，一般用于连续发送数据的传感器，建立一次联系后，一个发布者可以向多个订阅者发送信息，同样，一个订阅者也可以订阅多个发布者的消息。对于实时性、周期性的消息，使用topic来传输是最佳的选择。</p>
+<blockquote>
+<p>topic通信方式是异步的，发送时调用publish()方法，发送完成立即返回，不用等待反馈。</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20200729170511683.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pha2VYWQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>几种topic命令:</p>
+<table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>rostopic list</code></td>
+<td align="left">列出当前所有的topic</td>
+</tr>
+<tr>
+<td align="left"><code>rostopic info topic_name</code></td>
+<td align="left">显示某个topic的属性信息</td>
+</tr>
+<tr>
+<td align="left"><code>rostopic echo topic_name</code></td>
+<td align="left">显示某个topic的内容</td>
+</tr>
+<tr>
+<td align="left"><code>rostopic pub topic_name ...</code></td>
+<td align="left">向某个topic发布内容</td>
+</tr>
+<tr>
+<td align="left"><code>rostopic bw topic_name</code></td>
+<td align="left">查看某个topic的带宽</td>
+</tr>
+<tr>
+<td align="left"><code>rostopic hz topic_name</code></td>
+<td align="left">查看某个topic的频率</td>
+</tr>
+<tr>
+<td align="left"><code>rostopic find topic_type</code></td>
+<td align="left">查找某个类型的topic</td>
+</tr>
+<tr>
+<td align="left"><code>rostopic type topic_name</code></td>
+<td align="left">查看某个topic的类型(msg)</td>
+</tr>
+</tbody></table>
+<p><img src="https://img-blog.csdnimg.cn/20200729170522144.png" alt="在这里插入图片描述"></p>
+<h4 id="服务（service）"><a href="#服务（service）" class="headerlink" title="服务（service）"></a>服务（service）</h4><p>　　服务是同步双向的通信机制，服务器只有在有请求的时候才响应，客户端在发出请求后才接受响应。service包括两部分，一部分是请求方（Clinet），另一部分是应答方&#x2F;服务提供方（Server）。当服务的请求和响应完成时，两个连接点自动断开。</p>
+<blockquote>
+<p>Service是同步通信方式，所谓同步就是说，此时Node A发布请求后会在原地等待reply，直到Node B处理完了请求并且完成了reply，Node A才会继续执行。Node A等待过程中，是处于阻塞状态的成通信。这样的通信模型没有频繁的消息传递，没有冲突与高系统资源的占用，只有接受请求才执行服务，简单而且高效。</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20200729170536455.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pha2VYWQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>几种service命令:</p>
+<table>
+<thead>
+<tr>
+<th align="left">rosservice 命令</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>rosservice list</code></td>
+<td align="left">显示服务列表</td>
+</tr>
+<tr>
+<td align="left"><code>rosservice info</code></td>
+<td align="left">打印服务信息</td>
+</tr>
+<tr>
+<td align="left"><code>rosservice type</code></td>
+<td align="left">打印服务类型</td>
+</tr>
+<tr>
+<td align="left"><code>rosservice uri</code></td>
+<td align="left">打印服务ROSRPC uri</td>
+</tr>
+<tr>
+<td align="left"><code>rosservice find</code></td>
+<td align="left">按服务类型查找服务</td>
+</tr>
+<tr>
+<td align="left"><code>rosservice call</code></td>
+<td align="left">使用所提供的args调用服务</td>
+</tr>
+<tr>
+<td align="left"><code>rosservice args</code></td>
+<td align="left">打印服务参数</td>
+</tr>
+</tbody></table>
+<p><img src="https://img-blog.csdnimg.cn/20200729170549247.png" alt="在这里插入图片描述"></p>
+<h4 id="Topic和Service对比"><a href="#Topic和Service对比" class="headerlink" title="Topic和Service对比"></a>Topic和Service对比</h4><table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">Topic</th>
+<th align="left">Service</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">通信方式</td>
+<td align="left">异步通信</td>
+<td align="left">同步通信</td>
+</tr>
+<tr>
+<td align="left">实现原理</td>
+<td align="left">TCP&#x2F;IP</td>
+<td align="left">TCP&#x2F;IP</td>
+</tr>
+<tr>
+<td align="left">通信模型</td>
+<td align="left">Publish-Subscribe</td>
+<td align="left">Request-Reply</td>
+</tr>
+<tr>
+<td align="left">映射关系</td>
+<td align="left">Publish-Subscribe(多对多)</td>
+<td align="left">Request-Reply（多对一）</td>
+</tr>
+<tr>
+<td align="left">特点</td>
+<td align="left">接受者收到数据会回调（Callback）</td>
+<td align="left">远程过程调用（RPC）服务器端的服务</td>
+</tr>
+<tr>
+<td align="left">应用场景</td>
+<td align="left">连续、高频的数据发布</td>
+<td align="left">偶尔使用的功能&#x2F;具体的任务</td>
+</tr>
+<tr>
+<td align="left">举例</td>
+<td align="left">激光雷达、里程计发布数据</td>
+<td align="left">开关传感器、拍照、逆解计算</td>
+</tr>
+</tbody></table>
+<h4 id="动作（Action）"><a href="#动作（Action）" class="headerlink" title="动作（Action）"></a>动作（Action）</h4><p>　　Actionlib库类似service通信机制，actionlib也是一种请求响应机制的通信方式，actionlib主要弥补了service通信的一个不足，就是当机器人执行一个长时间的任务时，假如利用service通信方式，那么publisher会很长时间接受不到反馈的reply，致使通信受阻。当service通信不能很好的完成任务时候，actionlib则可以比较适合实现长时间的通信过程，actionlib通信过程可以随时被查看过程进度，也可以终止请求，这样的一个特性，使得它在一些特别的机制中拥有很高的效率。</p>
+<blockquote>
+<p>Action的工作原理是client-server模式，也是一个双向的通信模式。通信双方在ROS Action Protocol下通过消息进行数据的交流通信。client和server为用户提供一个简单的API来请求目标（在客户端）或通过函数调用和回调来执行目标（在服务器端）。</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20200729170600800.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pha2VYWQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>利用动作库进行请求响应，动作的内容格式应包含三个部分，目标、反馈、结果。</p>
+<ul>
+<li><p>目标</p>
+<p>机器人执行一个动作，应该有明确的移动目标信息，包括一些参数的设定，方向、角度、速度等等。从而使机器人完成动作任务。</p>
+</li>
+<li><p>反馈</p>
+<p>在动作进行的过程中，应该有实时的状态信息反馈给服务器的实施者，告诉实施者动作完成的状态，可以使实施者作出准确的判断去修正命令。</p>
+</li>
+<li><p>结果</p>
+<p>当运动完成时，动作服务器把本次运动的结果数据发送给客户端，使客户端得到本次动作的全部信息，例如可能包含机器人的运动时长，最终姿势等等。</p>
+</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/20200729170611147.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pha2VYWQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 
       </section>
 
@@ -165,32 +323,16 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-      <div class="card-cover" background-image-lazy data-img="https://pic.rmb.bdstatic.com/bjh/1bc6488cff7b82b4240b715248fe169e.jpeg"></div>
-    
-    <div class="card-text">
-      
-        <a href="/2022/07/10/Introduction-to-ROS/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">Introduction to ROS</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="https://s1.ax1x.com/2022/07/10/jsbOKA.jpg"></div>
+      <div class="card-cover" background-image-lazy data-img="https://img-blog.csdnimg.cn/20200331160532548.jpg"></div>
     
     <div class="card-text">
       
-        <a href="/2022/07/10/Hexo-FAQs/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">Hexo FAQs</h2>
+        <a href="/2022/07/10/VScode-Arduino-FAQs/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">VScode &amp;&amp; Arduino FAQs</h2>
         </a>
       
       <div class="card-text--row">Older</div>
