@@ -22,7 +22,7 @@
 
   
 
-  <title>Hexo FAQs | scooo</title>
+  <title>SwiftUI 控制流 | scooo</title>
 
   
 
@@ -46,7 +46,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://s1.ax1x.com/2022/07/10/jsbOKA.jpg)"></div>
+    <div class="post-image" style="background-image: url(https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg)"></div>
   
 
   <!-- navbar -->
@@ -97,18 +97,18 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">Hexo FAQs</h1>
+          <h1 class="title-wrap">SwiftUI 控制流</h1>
           <h2 class="title-sub-wrap">
             <strong>scooo</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-07-10T10:55:25.000Z" itemprop="datePublished">2022-07-10</time>
+            <time  class="article-date" datetime="2022-07-11T11:04:23.000Z" itemprop="datePublished">2022-07-11</time>
           </h2>
           <ul class="wrap-list dark">
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/FAQs/">🏷️ FAQs</a></li>
+    <li><a href="/tags/SwiftUI/">🏷️ SwiftUI</a></li>
   
 </ul>
         </div>
@@ -150,28 +150,17 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="Hexo-FAQs"><a href="#Hexo-FAQs" class="headerlink" title="Hexo FAQs"></a>Hexo FAQs</h1><h3 id="1安装nodejs后在命令行运行npm报错"><a href="#1安装nodejs后在命令行运行npm报错" class="headerlink" title="1安装nodejs后在命令行运行npm报错"></a>1安装nodejs后在命令行运行npm报错</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Error: Cannot find module &#x27; internal/util/types&#x27;</span><br><span class="line">at Function. Module._resolveFilename (module. js:536:15)</span><br><span class="line">at Function. Module._load 〈 module. js:466:25)</span><br><span class="line">at Module. require (module. js:579:17)</span><br><span class="line">at require 〈 internal/module. js:11:18)</span><br><span class="line">at evalmachine.&lt;anonymous&gt;:31:26</span><br><span class="line">at Object.&lt;anonymous&gt;(C: Users \w1s003\ AppData \ Roaning\ npm\ node _nodules\ npm node_modules\ graceful-fs\ fs. js:11:1)</span><br><span class="line">at Module._compile (module. js:635:30)</span><br><span class="line">at Object. Module._extensions.. js (module. js:646:10)</span><br><span class="line">at Module. load(module. js:554:32)</span><br><span class="line">at tryModuleLoad〈 module. js:497:12)</span><br></pre></td></tr></table></figure>
-
-
-
-<p>解决方法：删除目录“C:\Users&lt;user&gt;\AppData\Roaming\npm\node_modules”下的npm文件夹</p>
-<h3 id="2-如何安装最新版本Hexo"><a href="#2-如何安装最新版本Hexo" class="headerlink" title="2.如何安装最新版本Hexo"></a>2.如何安装最新版本Hexo</h3><p>如果要查看hexo的版本，请先建立一个空目录，执行<code>hexo init</code>命令，运行完毕后在终端输入<code>hexo -v</code>来查看hexo版本，否则你只能看到以下内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$ hexo -v</span><br><span class="line">hexo-cli: 4.3.0</span><br><span class="line">os: Linux 5.4.0-62-generic linux x64</span><br><span class="line">node: 12.18.3</span><br><span class="line">v8: 7.8.279.23-node.39</span><br><span class="line">uv: 1.38.0</span><br><span class="line">zlib: 1.2.11</span><br><span class="line">brotli: 1.0.7</span><br><span class="line">ares: 1.16.0</span><br><span class="line">modules: 72</span><br><span class="line">nghttp2: 1.41.0</span><br><span class="line">napi: 6</span><br><span class="line">llhttp: 2.0.4</span><br><span class="line">http_parser: 2.9.3</span><br><span class="line">openssl: 1.1.1g</span><br><span class="line">cldr: 37.0</span><br><span class="line">icu: 67.1</span><br><span class="line">tz: 2019c</span><br><span class="line">unicode: 13.0</span><br></pre></td></tr></table></figure>
-
-<p>下载最新版，如果<code>hexo init</code>时网速太慢，可以直接从github上下载下来，地址：<a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/releases"><strong>https://github.com/hexojs/hexo/releases</strong></a></p>
-<p>目前更新到6.2.0版本</p>
-<p>找到C盘下的<code>node_modules</code>文件夹里的<code>hexo-cli</code> 具体位置为：C:\Users&lt;user&gt;\AppData\Roaming\npm\node_modules\hexo-cli</p>
-<p>替换官网下载的文件</p>
-<p>然后打开终端，输入<code>hexo -v</code>，这时会报错，只需运行按照提示运行：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf node_modules &amp;&amp; npm install --force</span><br></pre></td></tr></table></figure>
-
-<p>成功：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">$ hexo -v</span><br><span class="line">INFO  Validating config</span><br><span class="line">hexo: 6.2.0</span><br><span class="line">hexo-cli: 6.2.0</span><br><span class="line">os: win32 10.0.22000</span><br><span class="line">node: 16.15.1</span><br><span class="line">v8: 9.4.146.24-node.21</span><br><span class="line">uv: 1.43.0</span><br><span class="line">zlib: 1.2.11</span><br><span class="line">brotli: 1.0.9</span><br><span class="line">ares: 1.18.1</span><br><span class="line">modules: 93</span><br><span class="line">nghttp2: 1.47.0</span><br><span class="line">napi: 8</span><br><span class="line">llhttp: 6.0.4</span><br><span class="line">openssl: 1.1.1o+quic</span><br><span class="line">cldr: 40.0</span><br><span class="line">icu: 70.1</span><br><span class="line">tz: 2021a3</span><br><span class="line">unicode: 14.0</span><br><span class="line">ngtcp2: 0.1.0-DEV</span><br><span class="line">nghttp3: 0.1.0-DEV</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="3绑定域名后出现GitHub-Pages-404错误"><a href="#3绑定域名后出现GitHub-Pages-404错误" class="headerlink" title="3绑定域名后出现GitHub Pages 404错误"></a>3绑定域名后出现GitHub Pages 404错误</h3><p>打开Github，找到存储库的settings-&gt;Pages-&gt;Custom domain 检查域名是否空白，检查域名控制台。</p>
-<h3 id="4主题优化及其他"><a href="#4主题优化及其他" class="headerlink" title="4主题优化及其他"></a>4主题优化及其他</h3><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/043a4ae7684d">主题优化</a> 				<a target="_blank" rel="noopener" href="https://imgtu.com/">免费图床</a></p>
+        <h2 id="值绑定（Value-Bindings）"><a href="#值绑定（Value-Bindings）" class="headerlink" title="值绑定（Value Bindings）"></a>值绑定（Value Bindings）</h2><p>case 分支允许将匹配的值声明为临时常量或变量，并且在 case 分支体内使用 —— 这种行为被称为值绑定（value binding），因为匹配的值在 case 分支体内，与临时的常量或变量绑定。</p>
+<p>下面的例子将下图中的点 (x, y)，使用 (Int, Int) 类型的元组表示，然后分类表示：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> anotherPoint <span class="operator">=</span> (<span class="number">2</span>, <span class="number">0</span>)</span><br><span class="line"><span class="keyword">switch</span> anotherPoint &#123;</span><br><span class="line"><span class="keyword">case</span> (<span class="keyword">let</span> x, <span class="number">0</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;on the x-axis with an x value of <span class="subst">\(x)</span>&quot;</span>)</span><br><span class="line"><span class="keyword">case</span> (<span class="number">0</span>, <span class="keyword">let</span> y):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;on the y-axis with a y value of <span class="subst">\(y)</span>&quot;</span>)</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">let</span> (x, y):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;somewhere else at (<span class="subst">\(x)</span>, <span class="subst">\(y)</span>)&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输出“on the x-axis with an x value of 2”</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://docs.swift.org/swift-book/_images/coordinateGraphMedium_2x.png" alt="image"><br>在上面的例子中，switch 语句会判断某个点是否在红色的 x 轴上，是否在橘黄色的 y 轴上，或者不在坐标轴上。</p>
+<p>这三个 case 都声明了常量 x 和 y 的占位符，用于临时获取元组 anotherPoint 的一个或两个值。第一个 case ——case (let x, 0) 将匹配一个纵坐标为 0 的点，并把这个点的横坐标赋给临时的常量 x。类似的，第二个 case ——case (0, let y) 将匹配一个横坐标为 0 的点，并把这个点的纵坐标赋给临时的常量 y。</p>
+<p>一旦声明了这些临时的常量，它们就可以在其对应的 case 分支里使用。在这个例子中，它们用于打印给定点的类型。</p>
+<p>请注意，这个 switch 语句不包含默认分支。这是因为最后一个 case ——case let(x, y) 声明了一个可以匹配余下所有值的元组。这使得 switch 语句已经完备了，因此不需要再书写默认分支。</p>
+<h2 id="Where"><a href="#Where" class="headerlink" title="Where"></a>Where</h2><p>case 分支的模式可以使用 where 语句来判断额外的条件。</p>
+<p>下面的例子把下图中的点 (x, y)进行了分类：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> yetAnotherPoint <span class="operator">=</span> (<span class="number">1</span>, <span class="operator">-</span><span class="number">1</span>)</span><br><span class="line"><span class="keyword">switch</span> yetAnotherPoint &#123;</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">let</span> (x, y) <span class="keyword">where</span> x <span class="operator">==</span> y:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;(<span class="subst">\(x)</span>, <span class="subst">\(y)</span>) is on the line x == y&quot;</span>)</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">let</span> (x, y) <span class="keyword">where</span> x <span class="operator">==</span> <span class="operator">-</span>y:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;(<span class="subst">\(x)</span>, <span class="subst">\(y)</span>) is on the line x == -y&quot;</span>)</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">let</span> (x, y):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;(<span class="subst">\(x)</span>, <span class="subst">\(y)</span>) is just some arbitrary point&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输出“(1, -1) is on the line x == -y”</span></span><br></pre></td></tr></table></figure>
+<p><strong>where同样适用于if语句</strong></p>
 
       </section>
 
@@ -179,30 +168,14 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-      <div class="card-cover" background-image-lazy data-img="https://img-blog.csdnimg.cn/20200331160532548.jpg"></div>
-    
-    <div class="card-text">
-      
-        <a href="/2022/07/10/VScode-Arduino-FAQs/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">VScode &amp;&amp; Arduino FAQs</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
     <div class="card-text">
       
-        <a href="/2022/07/08/hello-world/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">Hello World</h2>
+        <a href="/2022/07/11/SwiftUI-%E9%9B%86%E5%90%88/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">SwiftUI 集合</h2>
         </a>
       
       <div class="card-text--row">Older</div>

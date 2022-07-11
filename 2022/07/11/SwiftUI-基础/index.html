@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#3367D6"/>
+  <link rel="apple-touch-icon" href="/icons-192.png">
+  <link rel="manifest" href="/manifest.json">
+  
+  <meta name="generator" content="Hexo 6.2.0">
+
+  
+
+  
+
+  
+    <meta name="author" content="scooo">
+  
+
+  
+
+  
+
+  <title>SwiftUI 基础 | scooo</title>
+
+  
+
+  
+    <link rel="shortcut icon" href="/scorpio.png">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.3/index.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/monokai.css">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<link rel="alternate" href="/atom.xml" title="scooo" type="application/atom+xml">
+</head>
+<body>
+  <div class="root-container">
+    
+<!-- header container -->
+<header class="header-container post">
+  
+    <div class="post-image" style="background-image: url(https://pic.rmb.bdstatic.com/bjh/3794bba8a2f7b5959833c3764825bf49.png)"></div>
+  
+
+  <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          scooo
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+          <li class="navbar-list-item"><a href="/">首页</a></li>
+        
+          <li class="navbar-list-item"><a href="/links">友链</a></li>
+        
+          <li class="navbar-list-item"><a href="/about">关于</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">SwiftUI 基础</h1>
+          <h2 class="title-sub-wrap">
+            <strong>scooo</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2022-07-11T11:04:07.000Z" itemprop="datePublished">2022-07-11</time>
+          </h2>
+          <ul class="wrap-list dark">
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/tags/SwiftUI/">🏷️ SwiftUI</a></li>
+  
+</ul>
+        </div>
+      </div>
+    </div>
+  
+
+  
+  
+  
+
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+  <style>
+    .pace .pace-progress {
+        background: #1B5585; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1B5585, 0 0 5px     #1B5585; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1B5585;    /*上边框颜色*/
+        border-left-color: #1B5585;    /*左边框颜色*/
+    }
+</style>
+
+
+</header>
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+<div class="body-container">
+  <article class="content-container layout-block post-container">
+    <div class="article-info">
+      
+      
+      
+      
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+        <h3 id="加号两边的数类型须相同"><a href="#加号两边的数类型须相同" class="headerlink" title="加号两边的数类型须相同"></a>加号两边的数类型须相同</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> three <span class="operator">=</span> <span class="number">3</span></span><br><span class="line"><span class="keyword">let</span> pointOneFourOneFiveNine <span class="operator">=</span> <span class="number">0.14159</span></span><br><span class="line"><span class="keyword">let</span> pi <span class="operator">=</span> <span class="type">Double</span>(three) <span class="operator">+</span> pointOneFourOneFiveNine</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="类型别名"><a href="#类型别名" class="headerlink" title="类型别名"></a>类型别名</h3><p><code>typealias AudioSample = UInt16</code> </p>
+<h2 id="元组（tuples）"><a href="#元组（tuples）" class="headerlink" title="元组（tuples）"></a>元组（tuples）</h2><p>把多个值组合成一个复合值。元组内的值可以是任意类型，并不要求是相同类型。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> http404Error <span class="operator">=</span> (<span class="number">404</span>, <span class="string">&quot;Not Found&quot;</span>)</span><br><span class="line"><span class="comment">// http404Error 的类型是 (Int, String)，值是 (404, &quot;Not Found&quot;)</span></span><br></pre></td></tr></table></figure>
+<p>将一个元组的内容分解（decompose）成单独的常量和变量</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> (statusCode, statusMessage) <span class="operator">=</span> http404Error</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;The status code is <span class="subst">\(statusCode)</span>&quot;</span>)</span><br><span class="line"><span class="comment">// 输出“The status code is 404”</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;The status message is <span class="subst">\(statusMessage)</span>&quot;</span>)</span><br><span class="line"><span class="comment">// 输出“The status message is Not Found”</span></span><br></pre></td></tr></table></figure>
+<p>如果你只需要一部分元组值，分解的时候可以把要忽略的部分用下划线（_）标记：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> (justTheStatusCode, <span class="keyword">_</span>) <span class="operator">=</span> http404Error</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;The status code is <span class="subst">\(justTheStatusCode)</span>&quot;</span>)</span><br><span class="line"><span class="comment">// 输出“The status code is 404”</span></span><br></pre></td></tr></table></figure>
+<p>此外，你还可以通过下标来访问元组中的单个元素，下标从零开始：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;The status code is <span class="subst">\(http404Error.<span class="number">0</span>)</span>&quot;</span>)</span><br><span class="line"><span class="comment">// 输出“The status code is 404”</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;The status message is <span class="subst">\(http404Error.<span class="number">1</span>)</span>&quot;</span>)</span><br><span class="line"><span class="comment">// 输出“The status message is Not Found”</span></span><br></pre></td></tr></table></figure>
+
+<p>你可以在定义元组的时候给单个元素命名：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> http200Status <span class="operator">=</span> (statusCode: <span class="number">200</span>, description: <span class="string">&quot;OK&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>给元组中的元素命名后，你可以通过名字来获取这些元素的值：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;The status code is <span class="subst">\(http200Status.statusCode)</span>&quot;</span>)</span><br><span class="line"><span class="comment">// 输出“The status code is 200”</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;The status message is <span class="subst">\(http200Status.description)</span>&quot;</span>)</span><br><span class="line"><span class="comment">// 输出“The status message is OK”</span></span><br></pre></td></tr></table></figure>
+<h2 id="可选类型（optionals）"><a href="#可选类型（optionals）" class="headerlink" title="可选类型（optionals）"></a>可选类型（optionals）</h2><blockquote>
+<p>nil 表示“缺少一个合法的对象”</p>
+</blockquote>
+<p>声明一个可选常量或者变量但是没有赋值，它们会自动被设置为 nil：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> surveyAnswer: <span class="type">String</span>?</span><br><span class="line"><span class="comment">// surveyAnswer 被自动设置为 nil</span></span><br></pre></td></tr></table></figure>
+
+<p>当你确定可选类型确实包含值之后，你可以在可选的名字后面加一个感叹号（!）来获取值。这个惊叹号表示“我知道这个可选有值，请使用它。”这被称为可选值的强制解析（forced unwrapping）：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> convertedNumber <span class="operator">!=</span> <span class="literal">nil</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;convertedNumber has an integer value of <span class="subst">\(convertedNumber<span class="operator">!</span>)</span>.&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输出“convertedNumber has an integer value of 123.”</span></span><br></pre></td></tr></table></figure>
+<h2 id="可选绑定"><a href="#可选绑定" class="headerlink" title="可选绑定"></a>可选绑定</h2><p>使用可选绑定（optional binding）来判断可选类型是否包含值，如果包含就把值赋给一个临时常量或者变量。可选绑定可以用在 if 和 while 语句中，这条语句不仅可以用来判断可选类型中是否有值，同时可以将可选类型中的值赋给一个常量或者变量。if 和 while 语句，请参考 控制流。</p>
+<p>像下面这样在 if 语句中写一个可选绑定：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> constantName <span class="operator">=</span> someOptional &#123;</span><br><span class="line">    statements</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>你可以像上面这样使用可选绑定来重写 在 可选类型 举出的 possibleNumber 例子：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> actualNumber <span class="operator">=</span> <span class="type">Int</span>(possibleNumber) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;<span class="subst">\&#x27;</span><span class="subst">\(possibleNumber)</span><span class="subst">\&#x27;</span> has an integer value of <span class="subst">\(actualNumber)</span>&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;<span class="subst">\&#x27;</span><span class="subst">\(possibleNumber)</span><span class="subst">\&#x27;</span> could not be converted to an integer&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输出“&#x27;123&#x27; has an integer value of 123”</span></span><br></pre></td></tr></table></figure>
+<p>这段代码可以被理解为：</p>
+<p>“如果 Int(possibleNumber) 返回的可选 Int 包含一个值，创建一个叫做 actualNumber 的新常量并将可选包含的值赋给它。”</p>
+<p>如果转换成功，actualNumber 常量可以在 if 语句的第一个分支中使用。它已经被可选类型 包含的 值初始化过，所以不需要再使用 ! 后缀来获取它的值。在这个例子中，actualNumber 只被用来输出转换结果。</p>
+<p><strong>你可以在可选绑定中使用常量和变量</strong>。如果你想在 if 语句的第一个分支中操作 actualNumber 的值，你可以改成 if var actualNumber，这样可选类型包含的值就会被赋给一个变量而非常量。</p>
+<p>你可以包含多个可选绑定或多个布尔条件在一个 if 语句中，只要使用逗号分开就行。<strong>只要有任意一个可选绑定的值为 nil，或者任意一个布尔条件为 false，则整个 if 条件判断为 false</strong>，这时你就需要使用嵌套 if 条件语句来处理，如下所示：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> firstNumber <span class="operator">=</span> <span class="type">Int</span>(<span class="string">&quot;4&quot;</span>), <span class="keyword">let</span> secondNumber <span class="operator">=</span> <span class="type">Int</span>(<span class="string">&quot;42&quot;</span>), firstNumber <span class="operator">&lt;</span> secondNumber <span class="operator">&amp;&amp;</span> secondNumber <span class="operator">&lt;</span> <span class="number">100</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;<span class="subst">\(firstNumber)</span> &lt; <span class="subst">\(secondNumber)</span> &lt; 100&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输出“4 &lt; 42 &lt; 100”</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> firstNumber <span class="operator">=</span> <span class="type">Int</span>(<span class="string">&quot;4&quot;</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> secondNumber <span class="operator">=</span> <span class="type">Int</span>(<span class="string">&quot;42&quot;</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> firstNumber <span class="operator">&lt;</span> secondNumber <span class="operator">&amp;&amp;</span> secondNumber <span class="operator">&lt;</span> <span class="number">100</span> &#123;</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;<span class="subst">\(firstNumber)</span> &lt; <span class="subst">\(secondNumber)</span> &lt; 100&quot;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输出“4 &lt; 42 &lt; 100”</span></span><br></pre></td></tr></table></figure>
+<h3 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h3><p>如果赋值的右边是一个多元组，它的元素可以马上被分解成多个常量或变量：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> (x, y) <span class="operator">=</span> (<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="comment">// 现在 x 等于 1，y 等于 2</span></span><br></pre></td></tr></table></figure>
+<p>与 C 语言和 Objective-C 不同，Swift 的赋值操作并不返回任何值。所以下面语句是无效的：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> x <span class="operator">=</span> y &#123;</span><br><span class="line">    <span class="comment">// 此句错误，因为 x = y 并不返回任何值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过将 if x &#x3D; y 标记为无效语句，Swift 能帮你避免把 （&#x3D;&#x3D;）错写成（&#x3D;）这类错误的出现。</p>
+<h2 id="空合运算符（Nil-Coalescing-Operator）"><a href="#空合运算符（Nil-Coalescing-Operator）" class="headerlink" title="空合运算符（Nil Coalescing Operator）"></a>空合运算符（Nil Coalescing Operator）</h2><p>空合运算符（a ?? b）将对可选类型 a 进行空判断，如果 a 包含一个值就进行解包，否则就返回一个默认值 b。表达式 a 必须是 Optional 类型。默认值 b 的类型必须要和 a 存储值的类型保持一致。</p>
+<p>空合运算符是对以下代码的简短表达方法：</p>
+<p><code>a != nil ? a! : b</code><br>上述代码使用了三元运算符。当可选类型 a 的值不为空时，进行强制解封（a!），访问 a 中的值；反之返回默认值 b。无疑空合运算符（??）提供了一种更为优雅的方式去封装条件判断和解封两种行为，显得简洁以及更具可读性。</p>
+<p>注意</p>
+<p>如果 a 为非空值（non-nil），那么值 b 将不会被计算。这也就是所谓的短路求值。</p>
+<p>下文例子采用空合运算符，实现了在默认颜色名和可选自定义颜色名之间抉择：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> defaultColorName <span class="operator">=</span> <span class="string">&quot;red&quot;</span></span><br><span class="line"><span class="keyword">var</span> userDefinedColorName: <span class="type">String</span>?   <span class="comment">//默认值为 nil</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> colorNameToUse <span class="operator">=</span> userDefinedColorName <span class="operator">??</span> defaultColorName</span><br><span class="line"><span class="comment">// userDefinedColorName 的值为空，所以 colorNameToUse 的值为 &quot;red&quot;</span></span><br></pre></td></tr></table></figure>
+<p>userDefinedColorName 变量被定义为一个可选的 String 类型，默认值为 nil。由于 userDefinedColorName 是一个可选类型，我们可以使用空合运算符去判断其值。在上一个例子中，通过空合运算符为一个名为 colorNameToUse 的变量赋予一个字符串类型初始值。 由于 userDefinedColorName 值为空，因此表达式 userDefinedColorName ?? defaultColorName 返回 defaultColorName 的值，即 red。</p>
+<p>如果你分配一个非空值（non-nil）给 userDefinedColorName，再次执行空合运算，运算结果为封包在 userDefaultColorName 中的值，而非默认值。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">userDefinedColorName <span class="operator">=</span> <span class="string">&quot;green&quot;</span></span><br><span class="line">colorNameToUse <span class="operator">=</span> userDefinedColorName <span class="operator">??</span> defaultColorName</span><br><span class="line"><span class="comment">// userDefinedColorName 非空，因此 colorNameToUse 的值为 &quot;green&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="区间运算符（Range-Operators）"><a href="#区间运算符（Range-Operators）" class="headerlink" title="区间运算符（Range Operators）"></a>区间运算符（Range Operators）</h2><h4 id="闭区间运算符"><a href="#闭区间运算符" class="headerlink" title="闭区间运算符"></a>闭区间运算符</h4><p><strong>闭区间运算符（a…b）定义一个包含从 a 到 b（包括 a 和 b）的所有值的区间。a 的值不能超过 b</strong>。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> index <span class="keyword">in</span> <span class="number">1</span><span class="operator">...</span><span class="number">5</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;<span class="subst">\(index)</span> * 5 = <span class="subst">\(index <span class="operator">*</span> <span class="number">5</span>)</span>&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 1 * 5 = 5</span></span><br><span class="line"><span class="comment">// 2 * 5 = 10</span></span><br><span class="line"><span class="comment">// 3 * 5 = 15</span></span><br><span class="line"><span class="comment">// 4 * 5 = 20</span></span><br><span class="line"><span class="comment">// 5 * 5 = 25</span></span><br></pre></td></tr></table></figure>
+<h4 id="半开区间运算符"><a href="#半开区间运算符" class="headerlink" title="半开区间运算符"></a>半开区间运算符</h4><p><strong>半开区间运算符（a..&lt;b）定义一个从 a 到 b 但不包括 b 的区间。</strong></p>
+<p><em>半开区间的实用性在于当你使用一个从 0 开始的列表（如数组）时，非常方便地从0数到列表的长度。</em></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> names <span class="operator">=</span> [<span class="string">&quot;Anna&quot;</span>, <span class="string">&quot;Alex&quot;</span>, <span class="string">&quot;Brian&quot;</span>, <span class="string">&quot;Jack&quot;</span>]</span><br><span class="line"><span class="keyword">let</span> count <span class="operator">=</span> names.count</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span><span class="operator">..&lt;</span>count &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;第 <span class="subst">\(i <span class="operator">+</span> <span class="number">1</span>)</span> 个人叫 <span class="subst">\(names[i])</span>&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 第 1 个人叫 Anna</span></span><br><span class="line"><span class="comment">// 第 2 个人叫 Alex</span></span><br><span class="line"><span class="comment">// 第 3 个人叫 Brian</span></span><br><span class="line"><span class="comment">// 第 4 个人叫 Jack</span></span><br></pre></td></tr></table></figure>
+
+      </section>
+
+      
+      
+        <nav class="article-nav">
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2022/07/11/SwiftUI-%E9%9B%86%E5%90%88/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">SwiftUI 集合</h2>
+        </a>
+      
+      <div class="card-text--row">Newer</div>
+    </div>
+  </article>
+</div>
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+      <div class="card-cover" background-image-lazy data-img="https://pic.rmb.bdstatic.com/bjh/1bc6488cff7b82b4240b715248fe169e.jpeg"></div>
+    
+    <div class="card-text">
+      
+        <a href="/2022/07/10/Introduction-to-ROS/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Introduction to ROS</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
+
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+
+  
+  
+
+
+      </section>
+    </div>
+    <div class="widget-info">
+      <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-body">
+    
+      <img src="/avatar.ico" class="soft-size--round soft-style--box" alt="scooo">
+    
+    
+      <h2>scooo</h2>
+    
+    
+      <p>星辰大海</p>
+    
+
+    <div class="count-box">
+      <div class="count-box--item">
+        <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
+</svg>
+        <span>7</span>
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+        0
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+        3
+      </div>
+    </div>
+  </div>
+</section>
+
+      
+
+      
+<section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-notice" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M512 945.02305225v28.15620663a24.27259221 24.27259221 0 0 1-24.27259221 24.27259335H394.0352a48.54518557 48.54518557 0 0 1-41.74885888-23.78714112l-110.68302222-184.47170332a132.04290333 132.04290333 0 0 1-17.47626667-48.54518557h118.4502511a200.97706667 200.97706667 0 0 1 76.21594113 14.56355556l20.38897777 133.49925888a48.54518557 48.54518557 0 0 0 36.40888888 27.67075555l16.01991111 2.91271112a24.27259221 24.27259221 0 0 1 20.38897778 25.72894889zM997.45185223 463.45481443a194.18074112 194.18074112 0 0 1-38.8361489 116.50844445 24.75804445 24.75804445 0 0 1-36.4088889 0l-34.95253333-34.95253333a24.27259221 24.27259221 0 0 1-2.91271111-30.58346667 97.09036999 97.09036999 0 0 0 0-106.79940665 24.27259221 24.27259221 0 0 1 2.91271111-30.58346666l34.95253333-34.95253334a24.75804445 24.75804445 0 0 1 18.93262223-7.28177777 26.2144 26.2144 0 0 1 17.47626667 9.70903665A194.18074112 194.18074112 0 0 1 997.45185223 463.45481443z m-194.18074112-388.36148111v776.72296335a48.54518557 48.54518557 0 0 1-48.54518556 48.54518443h-28.64165888a48.54518557 48.54518557 0 0 1-33.98163001-14.07810332l-145.63555556-143.20829668A291.27111111 291.27111111 0 0 0 342.57730333 657.63555556H172.18370333a145.63555556 145.63555556 0 0 1-145.63555556-145.63555556v-97.09036999a145.63555556 145.63555556 0 0 1 145.63555556-145.63555556h170.3936a291.27111111 291.27111111 0 0 0 206.31703779-85.43952668l145.63555555-143.20829554a48.54518557 48.54518557 0 0 1 33.98162888-14.07810446H754.72592555a48.54518557 48.54518557 0 0 1 48.54518556 48.54518555z" fill="currentColor"></path>
+</svg>
+    <span>NOTICE</span>
+  </div>
+  <div class="widget-body">
+    <p>None</p>
+  </div>
+</section>
+
+
+      <section class="widget-categorys widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+    <span>CATEGORYS</span>
+  </div>
+  <div class="widget-body">
+    <ul class="categorys-list">
+      
+    </ul>
+  </div>
+</section>
+
+      <section class="widget-tags widget-item  layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+    <span>TAGS</span>
+  </div>
+  <div class="widget-body">
+    <div class="tags-cloud">
+      <a href="/tags/FAQs/" style="font-size: 15px;" class="tags-cloud-5">FAQs</a> <a href="/tags/ROS/" style="font-size: 10px;" class="tags-cloud-0">ROS</a> <a href="/tags/SwiftUI/" style="font-size: 20px;" class="tags-cloud-10">SwiftUI</a>
+    </div>
+  </div>
+</section>
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    
+    <div class="social-icons">
+      
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://github.com/scooomaker/" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-github" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M64.6 512c0 195.6 125.4 361.9 300.1 422.9 23.5 5.9 19.9-10.8 19.9-22.2v-77.6c-135.8 15.9-141.3-74-150.5-89-18.5-31.5-61.9-39.5-49-54.5 31-15.9 62.5 4 98.9 58 26.4 39.1 77.9 32.5 104.1 26 5.7-23.5 17.9-44.5 34.7-60.9-140.7-25.2-199.4-111.1-199.4-213.3 0-49.5 16.4-95.1 48.4-131.8-20.4-60.6 1.9-112.4 4.9-120.1 58.2-5.2 118.5 41.6 123.3 45.3 33.1-8.9 70.8-13.7 112.9-13.7 42.4 0 80.3 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.4-43.9 2.9 7.7 24.7 58.3 5.5 118.1 32.5 36.8 49 82.8 49 132.4 0 102.3-59 188.3-200.2 213.2 23.5 23.3 38.1 55.5 38.1 91.1v112.7c0.8 9 0 17.9 15.1 17.9C832.7 877 960.4 709.4 960.4 512.1c0-247.5-200.6-447.9-447.9-447.9C265 64.1 64.6 264.5 64.6 512z"></path>
+</svg>
+          </a>
+        
+      
+        
+      
+    </div>
+     
+    <p>&copy; 2022 <a href="/" target="_blank">scooo</a></p>
+
+    
+
+    <p>Powered by <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank" rel="noopener noreferrer author">flex-block</a></p>
+
+    <p>
+      <a href="javascript:;" id="theme-light">🌞 浅色</a>
+      <a href="javascript:;" id="theme-dark">🌛 深色</a>
+      <a href="javascript:;" id="theme-auto">🤖️ 自动</a>
+    </p>
+  </div>
+</footer>
+  </div>
+
+  <div class="back-to-top-fixed soft-size--round soft-style--box">
+    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
+      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
+      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
+    </svg>
+  </div>
+
+  
+  <!-- aplayer -->
+
+
+<!-- dplayer -->
+
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+  <!-- 尾部用户自定义相关内容 -->
+</body>
+</html>

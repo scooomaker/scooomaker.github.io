@@ -22,7 +22,7 @@
 
   
 
-  <title>Hexo FAQs | scooo</title>
+  <title>SwiftUI 集合 | scooo</title>
 
   
 
@@ -46,7 +46,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://s1.ax1x.com/2022/07/10/jsbOKA.jpg)"></div>
+    <div class="post-image" style="background-image: url(https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg)"></div>
   
 
   <!-- navbar -->
@@ -97,18 +97,18 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">Hexo FAQs</h1>
+          <h1 class="title-wrap">SwiftUI 集合</h1>
           <h2 class="title-sub-wrap">
             <strong>scooo</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-07-10T10:55:25.000Z" itemprop="datePublished">2022-07-10</time>
+            <time  class="article-date" datetime="2022-07-11T11:04:14.000Z" itemprop="datePublished">2022-07-11</time>
           </h2>
           <ul class="wrap-list dark">
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/FAQs/">🏷️ FAQs</a></li>
+    <li><a href="/tags/SwiftUI/">🏷️ SwiftUI</a></li>
   
 </ul>
         </div>
@@ -150,28 +150,31 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="Hexo-FAQs"><a href="#Hexo-FAQs" class="headerlink" title="Hexo FAQs"></a>Hexo FAQs</h1><h3 id="1安装nodejs后在命令行运行npm报错"><a href="#1安装nodejs后在命令行运行npm报错" class="headerlink" title="1安装nodejs后在命令行运行npm报错"></a>1安装nodejs后在命令行运行npm报错</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Error: Cannot find module &#x27; internal/util/types&#x27;</span><br><span class="line">at Function. Module._resolveFilename (module. js:536:15)</span><br><span class="line">at Function. Module._load 〈 module. js:466:25)</span><br><span class="line">at Module. require (module. js:579:17)</span><br><span class="line">at require 〈 internal/module. js:11:18)</span><br><span class="line">at evalmachine.&lt;anonymous&gt;:31:26</span><br><span class="line">at Object.&lt;anonymous&gt;(C: Users \w1s003\ AppData \ Roaning\ npm\ node _nodules\ npm node_modules\ graceful-fs\ fs. js:11:1)</span><br><span class="line">at Module._compile (module. js:635:30)</span><br><span class="line">at Object. Module._extensions.. js (module. js:646:10)</span><br><span class="line">at Module. load(module. js:554:32)</span><br><span class="line">at tryModuleLoad〈 module. js:497:12)</span><br></pre></td></tr></table></figure>
+        <h1 id="集合类型"><a href="#集合类型" class="headerlink" title="集合类型"></a>集合类型</h1><p>Swift 语言提供 Arrays、Sets 和 Dictionaries 三种基本的集合类型用来存储集合数据。数组（Arrays）是有序数据的集。集合（Sets）是无序无重复数据的集。字典（Dictionaries）是无序的键值对的集。</p>
+<p><img src="https://docs.swift.org/swift-book/_images/CollectionTypes_intro_2x.png" alt="image"></p>
+<h3 id="数组（Arrays）"><a href="#数组（Arrays）" class="headerlink" title="数组（Arrays）"></a>数组（Arrays）</h3><p>数组使用有序列表存储<strong>同一类型的多个值</strong>。相同的值可以多次出现在一个数组的不同位置中。</p>
+<h4 id="创建一个空数组"><a href="#创建一个空数组" class="headerlink" title="创建一个空数组"></a>创建一个空数组</h4><p>我们可以使用构造语法来创建一个由特定数据类型构成的空数组：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> someInts <span class="operator">=</span> [<span class="type">Int</span>]()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;someInts is of type [Int] with <span class="subst">\(someInts.count)</span> items.&quot;</span>)</span><br><span class="line"><span class="comment">// 打印“someInts is of type [Int] with 0 items.”</span></span><br></pre></td></tr></table></figure>
+<p>注意，通过构造函数的类型，someInts 的值类型被推断为 [Int]。</p>
+<p>或者，如果代码上下文中已经提供了类型信息，例如一个函数参数或者一个已经定义好类型的常量或者变量，我们可以使用空数组语句创建一个空数组，它的写法很简单：[]（一对空方括号）：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">someInts.append(<span class="number">3</span>)</span><br><span class="line"><span class="comment">// someInts 现在包含一个 Int 值</span></span><br><span class="line">someInts <span class="operator">=</span> []</span><br><span class="line"><span class="comment">// someInts 现在是空数组，但是仍然是 [Int] 类型的。</span></span><br></pre></td></tr></table></figure>
+<h4 id="创建一个带有默认值的数组"><a href="#创建一个带有默认值的数组" class="headerlink" title="创建一个带有默认值的数组"></a>创建一个带有默认值的数组</h4><p>Swift 中的 Array 类型还提供一个可以创建特定大小并且所有数据都被默认的构造方法。我们可以把准备加入新数组的数据项数量（count）和适当类型的初始值（repeating）传入数组构造函数：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> threeDoubles <span class="operator">=</span> <span class="type">Array</span>(repeating: <span class="number">0.0</span>, count: <span class="number">3</span>)</span><br><span class="line"><span class="comment">// threeDoubles 是一种 [Double] 数组，等价于 [0.0, 0.0, 0.0]</span></span><br></pre></td></tr></table></figure>
+<h4 id="通过两个数组相加创建一个数组"><a href="#通过两个数组相加创建一个数组" class="headerlink" title="通过两个数组相加创建一个数组"></a>通过两个数组相加创建一个数组</h4><p>我们可以使用加法操作符（+）来组合两种已存在的相同类型数组。新数组的数据类型会被从两个数组的数据类型中推断出来：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> anotherThreeDoubles <span class="operator">=</span> <span class="type">Array</span>(repeating: <span class="number">2.5</span>, count: <span class="number">3</span>)</span><br><span class="line"><span class="comment">// anotherThreeDoubles 被推断为 [Double]，等价于 [2.5, 2.5, 2.5]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sixDoubles <span class="operator">=</span> threeDoubles <span class="operator">+</span> anotherThreeDoubles</span><br><span class="line"><span class="comment">// sixDoubles 被推断为 [Double]，等价于 [0.0, 0.0, 0.0, 2.5, 2.5, 2.5]</span></span><br></pre></td></tr></table></figure>
 
-
-
-<p>解决方法：删除目录“C:\Users&lt;user&gt;\AppData\Roaming\npm\node_modules”下的npm文件夹</p>
-<h3 id="2-如何安装最新版本Hexo"><a href="#2-如何安装最新版本Hexo" class="headerlink" title="2.如何安装最新版本Hexo"></a>2.如何安装最新版本Hexo</h3><p>如果要查看hexo的版本，请先建立一个空目录，执行<code>hexo init</code>命令，运行完毕后在终端输入<code>hexo -v</code>来查看hexo版本，否则你只能看到以下内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$ hexo -v</span><br><span class="line">hexo-cli: 4.3.0</span><br><span class="line">os: Linux 5.4.0-62-generic linux x64</span><br><span class="line">node: 12.18.3</span><br><span class="line">v8: 7.8.279.23-node.39</span><br><span class="line">uv: 1.38.0</span><br><span class="line">zlib: 1.2.11</span><br><span class="line">brotli: 1.0.7</span><br><span class="line">ares: 1.16.0</span><br><span class="line">modules: 72</span><br><span class="line">nghttp2: 1.41.0</span><br><span class="line">napi: 6</span><br><span class="line">llhttp: 2.0.4</span><br><span class="line">http_parser: 2.9.3</span><br><span class="line">openssl: 1.1.1g</span><br><span class="line">cldr: 37.0</span><br><span class="line">icu: 67.1</span><br><span class="line">tz: 2019c</span><br><span class="line">unicode: 13.0</span><br></pre></td></tr></table></figure>
-
-<p>下载最新版，如果<code>hexo init</code>时网速太慢，可以直接从github上下载下来，地址：<a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/releases"><strong>https://github.com/hexojs/hexo/releases</strong></a></p>
-<p>目前更新到6.2.0版本</p>
-<p>找到C盘下的<code>node_modules</code>文件夹里的<code>hexo-cli</code> 具体位置为：C:\Users&lt;user&gt;\AppData\Roaming\npm\node_modules\hexo-cli</p>
-<p>替换官网下载的文件</p>
-<p>然后打开终端，输入<code>hexo -v</code>，这时会报错，只需运行按照提示运行：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf node_modules &amp;&amp; npm install --force</span><br></pre></td></tr></table></figure>
-
-<p>成功：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">$ hexo -v</span><br><span class="line">INFO  Validating config</span><br><span class="line">hexo: 6.2.0</span><br><span class="line">hexo-cli: 6.2.0</span><br><span class="line">os: win32 10.0.22000</span><br><span class="line">node: 16.15.1</span><br><span class="line">v8: 9.4.146.24-node.21</span><br><span class="line">uv: 1.43.0</span><br><span class="line">zlib: 1.2.11</span><br><span class="line">brotli: 1.0.9</span><br><span class="line">ares: 1.18.1</span><br><span class="line">modules: 93</span><br><span class="line">nghttp2: 1.47.0</span><br><span class="line">napi: 8</span><br><span class="line">llhttp: 6.0.4</span><br><span class="line">openssl: 1.1.1o+quic</span><br><span class="line">cldr: 40.0</span><br><span class="line">icu: 70.1</span><br><span class="line">tz: 2021a3</span><br><span class="line">unicode: 14.0</span><br><span class="line">ngtcp2: 0.1.0-DEV</span><br><span class="line">nghttp3: 0.1.0-DEV</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="3绑定域名后出现GitHub-Pages-404错误"><a href="#3绑定域名后出现GitHub-Pages-404错误" class="headerlink" title="3绑定域名后出现GitHub Pages 404错误"></a>3绑定域名后出现GitHub Pages 404错误</h3><p>打开Github，找到存储库的settings-&gt;Pages-&gt;Custom domain 检查域名是否空白，检查域名控制台。</p>
-<h3 id="4主题优化及其他"><a href="#4主题优化及其他" class="headerlink" title="4主题优化及其他"></a>4主题优化及其他</h3><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/043a4ae7684d">主题优化</a> 				<a target="_blank" rel="noopener" href="https://imgtu.com/">免费图床</a></p>
+<h4 id="用数组字面量构造数组"><a href="#用数组字面量构造数组" class="headerlink" title="用数组字面量构造数组"></a>用数组字面量构造数组</h4><p>我们可以使用数组字面量来进行数组构造，这是一种用一个或者多个数值构造数组的简单方法。数组字面量是一系列由逗号分割并由方括号包含的数值：</p>
+<p><code>[value 1, value 2, value 3]</code>。</p>
+<p>下面这个例子创建了一个叫做 shoppingList 并且存储 String 的数组：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> shoppingList: [<span class="type">String</span>] <span class="operator">=</span> [<span class="string">&quot;Eggs&quot;</span>, <span class="string">&quot;Milk&quot;</span>]</span><br><span class="line"><span class="comment">// shoppingList 已经被构造并且拥有两个初始项。</span></span><br></pre></td></tr></table></figure>
+<p>shoppingList 变量被声明为“字符串值类型的数组“，记作 [String]。 因为这个数组被规定只有 String 一种数据结构，所以只有 String 类型可以在其中被存取。 在这里，shoppingList 数组由两个 String 值（”Eggs” 和 “Milk”）构造，并且由数组字面量定义。</p>
+<blockquote>
+<p>shoppingList 数组被声明为变量（var 关键字创建）而不是常量（let 创建）是因为以后可能会有更多的数据项被插入其中。</p>
+</blockquote>
+<p>在这个例子中，字面量仅仅包含两个 String 值。匹配了该数组的变量声明（只能包含 String 的数组），所以这个字面量的分配过程可以作为用两个初始项来构造 shoppingList 的一种方式。</p>
+<p>由于 Swift 的类型推断机制，当我们用字面量构造只拥有相同类型值数组的时候，我们不必把数组的类型定义清楚。shoppingList 的构造也可以这样写：</p>
+<p><code>var shoppingList = [&quot;Eggs&quot;, &quot;Milk&quot;]</code><br>因为所有数组字面量中的值都是相同的类型，Swift 可以推断出 [String] 是 shoppingList 中变量的正确类型。</p>
+<h3 id="集合（Sets）"><a href="#集合（Sets）" class="headerlink" title="集合（Sets）"></a>集合（Sets）</h3><p>集合（Set）用来存储<strong>相同类型并且没有确定顺序的值</strong>。当集合元素顺序不重要时或者希望确保每个元素只出现一次时可以使用集合而不是数组。</p>
 
       </section>
 
@@ -182,12 +185,10 @@
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="https://img-blog.csdnimg.cn/20200331160532548.jpg"></div>
-    
     <div class="card-text">
       
-        <a href="/2022/07/10/VScode-Arduino-FAQs/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">VScode &amp;&amp; Arduino FAQs</h2>
+        <a href="/2022/07/11/SwiftUI-%E6%8E%A7%E5%88%B6%E6%B5%81/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">SwiftUI 控制流</h2>
         </a>
       
       <div class="card-text--row">Newer</div>
@@ -199,10 +200,12 @@
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
+      <div class="card-cover" background-image-lazy data-img="https://pic.rmb.bdstatic.com/bjh/3794bba8a2f7b5959833c3764825bf49.png"></div>
+    
     <div class="card-text">
       
-        <a href="/2022/07/08/hello-world/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">Hello World</h2>
+        <a href="/2022/07/11/SwiftUI-%E5%9F%BA%E7%A1%80/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">SwiftUI 基础</h2>
         </a>
       
       <div class="card-text--row">Older</div>
