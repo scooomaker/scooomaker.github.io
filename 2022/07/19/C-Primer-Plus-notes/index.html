@@ -22,7 +22,7 @@
 
   
 
-  <title>SwiftUI 控制流 | scooo</title>
+  <title>C++ Primer Plus notes | scooo</title>
 
   
 
@@ -46,7 +46,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://pic.rmb.bdstatic.com/bjh/841feb761e6518771ba9778993d0d854.jpeg)"></div>
+    <div class="post-image" style="background-image: url(https://pic.rmb.bdstatic.com/bjh/e901ee7fd161fce4c3213e1bd16192a6.jpeg)"></div>
   
 
   <!-- navbar -->
@@ -97,18 +97,18 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">SwiftUI 控制流</h1>
+          <h1 class="title-wrap">C++ Primer Plus notes</h1>
           <h2 class="title-sub-wrap">
             <strong>scooo</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-07-11T11:04:23.000Z" itemprop="datePublished">2022-07-11</time>
+            <time  class="article-date" datetime="2022-07-19T05:59:09.000Z" itemprop="datePublished">2022-07-19</time>
           </h2>
           <ul class="wrap-list dark">
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/SwiftUI/">🏷️ SwiftUI</a></li>
+    <li><a href="/tags/C/">🏷️ C++</a></li>
   
 </ul>
         </div>
@@ -150,17 +150,14 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h2 id="值绑定（Value-Bindings）"><a href="#值绑定（Value-Bindings）" class="headerlink" title="值绑定（Value Bindings）"></a>值绑定（Value Bindings）</h2><p>case 分支允许将匹配的值声明为临时常量或变量，并且在 case 分支体内使用 —— 这种行为被称为值绑定（value binding），因为匹配的值在 case 分支体内，与临时的常量或变量绑定。</p>
-<p>下面的例子将下图中的点 (x, y)，使用 (Int, Int) 类型的元组表示，然后分类表示：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> anotherPoint <span class="operator">=</span> (<span class="number">2</span>, <span class="number">0</span>)</span><br><span class="line"><span class="keyword">switch</span> anotherPoint &#123;</span><br><span class="line"><span class="keyword">case</span> (<span class="keyword">let</span> x, <span class="number">0</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;on the x-axis with an x value of <span class="subst">\(x)</span>&quot;</span>)</span><br><span class="line"><span class="keyword">case</span> (<span class="number">0</span>, <span class="keyword">let</span> y):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;on the y-axis with a y value of <span class="subst">\(y)</span>&quot;</span>)</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">let</span> (x, y):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;somewhere else at (<span class="subst">\(x)</span>, <span class="subst">\(y)</span>)&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输出“on the x-axis with an x value of 2”</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://docs.swift.org/swift-book/_images/coordinateGraphMedium_2x.png" alt="image"><br>在上面的例子中，switch 语句会判断某个点是否在红色的 x 轴上，是否在橘黄色的 y 轴上，或者不在坐标轴上。</p>
-<p>这三个 case 都声明了常量 x 和 y 的占位符，用于临时获取元组 anotherPoint 的一个或两个值。第一个 case ——case (let x, 0) 将匹配一个纵坐标为 0 的点，并把这个点的横坐标赋给临时的常量 x。类似的，第二个 case ——case (0, let y) 将匹配一个横坐标为 0 的点，并把这个点的纵坐标赋给临时的常量 y。</p>
-<p>一旦声明了这些临时的常量，它们就可以在其对应的 case 分支里使用。在这个例子中，它们用于打印给定点的类型。</p>
-<p>请注意，这个 switch 语句不包含默认分支。这是因为最后一个 case ——case let(x, y) 声明了一个可以匹配余下所有值的元组。这使得 switch 语句已经完备了，因此不需要再书写默认分支。</p>
-<h2 id="Where"><a href="#Where" class="headerlink" title="Where"></a>Where</h2><p>case 分支的模式可以使用 where 语句来判断额外的条件。</p>
-<p>下面的例子把下图中的点 (x, y)进行了分类：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> yetAnotherPoint <span class="operator">=</span> (<span class="number">1</span>, <span class="operator">-</span><span class="number">1</span>)</span><br><span class="line"><span class="keyword">switch</span> yetAnotherPoint &#123;</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">let</span> (x, y) <span class="keyword">where</span> x <span class="operator">==</span> y:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;(<span class="subst">\(x)</span>, <span class="subst">\(y)</span>) is on the line x == y&quot;</span>)</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">let</span> (x, y) <span class="keyword">where</span> x <span class="operator">==</span> <span class="operator">-</span>y:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;(<span class="subst">\(x)</span>, <span class="subst">\(y)</span>) is on the line x == -y&quot;</span>)</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">let</span> (x, y):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;(<span class="subst">\(x)</span>, <span class="subst">\(y)</span>) is just some arbitrary point&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输出“(1, -1) is on the line x == -y”</span></span><br></pre></td></tr></table></figure>
-<p><strong>where同样适用于if语句</strong></p>
+        <h1 id="C-Primer-Plus-notes"><a href="#C-Primer-Plus-notes" class="headerlink" title="C++ Primer Plus notes"></a>C++ Primer Plus notes</h1><h2 id="Chapter-IV"><a href="#Chapter-IV" class="headerlink" title="Chapter IV"></a>Chapter IV</h2><h3 id="array"><a href="#array" class="headerlink" title="array"></a>array</h3><p>It can only be initialized when the array is defined.And cannot assign an array to another array:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> hand[<span class="number">3</span>] = &#123;<span class="number">3</span>,<span class="number">3</span>,<span class="number">2</span>&#125;;</span><br><span class="line"><span class="type">int</span> cards[<span class="number">4</span>];</span><br><span class="line">card[<span class="number">4</span>] = &#123;<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">2</span>&#125;; <span class="comment">// not allowed</span></span><br><span class="line">hand = cards;        <span class="comment">// not allowed</span></span><br></pre></td></tr></table></figure>
+<p>If only initialize a part of array , the compiler will assign zero to the others element.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> abc[<span class="number">99</span>]&#123;<span class="number">32</span>,<span class="number">1</span>,<span class="number">123</span>&#125;;</span><br><span class="line"><span class="comment">//the compiler will assign zero to others elements</span></span><br></pre></td></tr></table></figure>
+<h3 id="C-style-string"><a href="#C-style-string" class="headerlink" title="C-style string"></a>C-style string</h3><p>C-style string end with a null character <code>&quot;\0&quot;</code> Its ASCII code is 0,use it to mark the end of the string.<br>C++ has lots of functions to process string,such as <code>cout</code>,<code>cout</code>process string one by one until the empty character appears.</p>
+<h5 id="A-common-string"><a href="#A-common-string" class="headerlink" title="A common string:"></a>A common string:</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> abp[<span class="number">5</span>]=&#123;<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;d&#x27;</span>,<span class="string">&#x27;\0&#x27;</span>&#125;;</span><br><span class="line"><span class="comment">//You must add the empty character by hand,otherwise it will not be a string.</span></span><br></pre></td></tr></table></figure>
+<h5 id="A-simple-writing-method"><a href="#A-simple-writing-method" class="headerlink" title="A simple writing method"></a>A simple writing method</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> bird[] = <span class="string">&quot;Mr. birds&quot;</span>;</span><br><span class="line"><span class="comment">//String enclosed in parentheses include empty character</span></span><br></pre></td></tr></table></figure>
+<p>This way of writing is called <strong>string constant</strong><br><strong>String constant can be spliced.</strong></p>
 
       </section>
 
@@ -168,32 +165,16 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-      <div class="card-cover" background-image-lazy data-img="https://pic.rmb.bdstatic.com/bjh/e901ee7fd161fce4c3213e1bd16192a6.jpeg"></div>
-    
-    <div class="card-text">
-      
-        <a href="/2022/07/19/C-Primer-Plus-notes/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">C++ Primer Plus notes</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="https://pic.rmb.bdstatic.com/bjh/81ba9be158cd4a054d6b29df42a12401.jpeg"></div>
+      <div class="card-cover" background-image-lazy data-img="https://pic.rmb.bdstatic.com/bjh/841feb761e6518771ba9778993d0d854.jpeg"></div>
     
     <div class="card-text">
       
-        <a href="/2022/07/11/SwiftUI-%E9%9B%86%E5%90%88/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">SwiftUI 集合</h2>
+        <a href="/2022/07/11/SwiftUI-%E6%8E%A7%E5%88%B6%E6%B5%81/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">SwiftUI 控制流</h2>
         </a>
       
       <div class="card-text--row">Older</div>

@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-07-11T13:14:03.795Z</updated>
+  <updated>2022-07-19T06:01:12.641Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C++ Primer Plus notes</title>
+    <link href="http://example.com/2022/07/19/C-Primer-Plus-notes/"/>
+    <id>http://example.com/2022/07/19/C-Primer-Plus-notes/</id>
+    <published>2022-07-19T05:59:09.000Z</published>
+    <updated>2022-07-19T06:01:12.641Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="C-Primer-Plus-notes"><a href="#C-Primer-Plus-notes" class="headerlink" title="C++ Primer Plus notes"></a>C++ Primer Plus notes</h1><h2 id="Chapter-IV"><a href="#Chapter-IV" class="headerlink" title="Chapter IV"></a>Chapter IV</h2><h3 id="array"><a href="#array" class="headerlink" title="array"></a>array</h3><p>It can only be initialized when the array is defined.And cannot assign an array to another array:</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> hand[<span class="number">3</span>] = &#123;<span class="number">3</span>,<span class="number">3</span>,<span class="number">2</span>&#125;;</span><br><span class="line"><span class="type">int</span> cards[<span class="number">4</span>];</span><br><span class="line">card[<span class="number">4</span>] = &#123;<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">2</span>&#125;; <span class="comment">// not allowed</span></span><br><span class="line">hand = cards;        <span class="comment">// not allowed</span></span><br></pre></td></tr></table></figure><p>If only initialize a part of array , the compiler will assign zero to the others element.</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> abc[<span class="number">99</span>]&#123;<span class="number">32</span>,<span class="number">1</span>,<span class="number">123</span>&#125;;</span><br><span class="line"><span class="comment">//the compiler will assign zero to others elements</span></span><br></pre></td></tr></table></figure><h3 id="C-style-string"><a href="#C-style-string" class="headerlink" title="C-style string"></a>C-style string</h3><p>C-style string end with a null character <code>&quot;\0&quot;</code> Its ASCII code is 0,use it to mark the end of the string.<br>C++ has lots of functions to process string,such as <code>cout</code>,<code>cout</code>process string one by one until the empty character appears.</p><h5 id="A-common-string"><a href="#A-common-string" class="headerlink" title="A common string:"></a>A common string:</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> abp[<span class="number">5</span>]=&#123;<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;d&#x27;</span>,<span class="string">&#x27;\0&#x27;</span>&#125;;</span><br><span class="line"><span class="comment">//You must add the empty character by hand,otherwise it will not be a string.</span></span><br></pre></td></tr></table></figure><h5 id="A-simple-writing-method"><a href="#A-simple-writing-method" class="headerlink" title="A simple writing method"></a>A simple writing method</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> bird[] = <span class="string">&quot;Mr. birds&quot;</span>;</span><br><span class="line"><span class="comment">//String enclosed in parentheses include empty character</span></span><br></pre></td></tr></table></figure><p>This way of writing is called <strong>string constant</strong><br><strong>String constant can be spliced.</strong></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;C-Primer-Plus-notes&quot;&gt;&lt;a href=&quot;#C-Primer-Plus-notes&quot; class=&quot;headerlink&quot; title=&quot;C++ Primer Plus notes&quot;&gt;&lt;/a&gt;C++ Primer Plus notes&lt;/h1&gt;&lt;</summary>
+      
+    
+    
+    
+    
+    <category term="C++" scheme="http://example.com/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>SwiftUI 控制流</title>
