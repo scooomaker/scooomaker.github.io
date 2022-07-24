@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-07-24T06:17:29.304Z</updated>
+  <updated>2022-07-24T06:26:19.497Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://example.com/2022/07/24/Temp/"/>
     <id>http://example.com/2022/07/24/Temp/</id>
     <published>2022-07-24T06:15:58.000Z</published>
-    <updated>2022-07-24T06:17:29.304Z</updated>
+    <updated>2022-07-24T06:26:19.497Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="This-is-a-temp-pages"><a href="#This-is-a-temp-pages" class="headerlink" title="This is a temp pages"></a>This is a temp pages</h1><p>texp<br>texm<br>ok</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="This-is-a-temp-pages"><a href="#This-is-a-temp-pages" class="headerlink" title="This is a temp pages"></a>This is a temp pages</h1><p>关于 github pages 不能设为private这件事……</p>]]></content>
     
     
       
