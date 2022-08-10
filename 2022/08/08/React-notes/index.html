@@ -106,6 +106,8 @@
 </ul>
           <ul class="wrap-list dark">
   
+    <li><a href="/tags/React/">🏷️ React</a></li>
+  
 </ul>
         </div>
       </div>
@@ -146,7 +148,107 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        
+        <h1 id="React"><a href="#React" class="headerlink" title="React"></a>React</h1><h2 id="React简介"><a href="#React简介" class="headerlink" title="React简介"></a>React简介</h2><p><strong>React</strong> 是一个用于构建用户界面的 JavaScript 库，用来为现代的网络构建用户界面。React起源于Facebook，由Facebook的软件工程师 Jordan Walke 开发，2012年部署于 Instagram，2013年开源。除此之外，React还有React Native框架，通过它让我们可以直接使用 JavaScript 来编写原生应用。</p>
+<p>React的特点：</p>
+<ul>
+<li>虚拟DOM</li>
+<li>声明式</li>
+<li>基于组件</li>
+<li>支持服务器端渲染</li>
+<li>快速、简单、易学</li>
+</ul>
+<h2 id="HelloWorld"><a href="#HelloWorld" class="headerlink" title="HelloWorld"></a>HelloWorld</h2><p>React的常规开发方式并不是通过浏览器引入外部js脚本来使用，但在入门阶段我们暂且先使用这种方式来简单体会一下React。</p>
+<p>使用React开发Web项目，我们需要引入两个js脚本：</p>
+<p><code>react.development.js</code></p>
+<ul>
+<li>react 是react核心库，只要使用react就必须要引入</li>
+<li>下载地址：<a target="_blank" rel="noopener" href="https://unpkg.com/react@18.0.0/umd/react.development.js">https://unpkg.com/react@18.0.0/umd/react.development.js</a></li>
+</ul>
+<p><code>react-dom.development.js</code></p>
+<ul>
+<li>react-dom 是react的dom包，使用react开发web应用时必须引入</li>
+<li>下载地址：<a target="_blank" rel="noopener" href="https://unpkg.com/react-dom@18.0.0/umd/react-dom.development.js">https://unpkg.com/react-dom@18.0.0/umd/react-dom.development.js</a></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> div = <span class="title class_">React</span>.<span class="title function_">createElement</span>(<span class="string">&quot;div&quot;</span> , &#123;<span class="attr">id</span>:<span class="string">&#x27;btn&#x27;</span>&#125; , <span class="string">&#x27;我是React创建的div&#x27;</span>);</span><br><span class="line"><span class="comment">//React.creatElement();</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> root = <span class="title class_">ReactDOM</span>.<span class="title function_">creatRoot</span>(<span class="variable language_">document</span>.<span class="title function_">gitElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br><span class="line"><span class="comment">//获取根元素对应的React元素，创建React根元素，需要一个DOM元素作为参数</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">root.<span class="title function_">render</span>(div); <span class="comment">// 将div渲染到根元素中</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="三个API"><a href="#三个API" class="headerlink" title="三个API"></a>三个API</h2><ul>
+<li><code>React.createElement()</code><ul>
+<li><code>React.createElement(type, [props], [...children])</code><ol>
+<li><p>元素名（组件名）</p>
+</li>
+<li><p>元素中的属性（id，class）设置事件时要改为驼峰命名法</p>
+</li>
+<li><p>元素中的子元素（内容）</p>
+</li>
+</ol>
+</li>
+<li>用来创建React元素</li>
+<li>React元素无法修改</li>
+</ul>
+</li>
+<li><code>ReactDOM.createRoot()</code><ul>
+<li><code>createRoot(container[, options])</code></li>
+<li>用来创建React的根容器，容器用来放置React元素</li>
+</ul>
+</li>
+<li><code>root.render()</code><ul>
+<li><code>root.render(element)</code></li>
+<li>当首次调用时，容器节点里的所有 DOM 元素都会被替换，后续的调用则会使用 React 的 DOM 差分算法（DOM diffing algorithm）进行高效的更新。</li>
+<li>不会修改容器节点（只会修改容器的子节点）。可以在不覆盖现有子节点的情况下，将组件插入已有的 DOM 节点中。</li>
+</ul>
+</li>
+</ul>
+<h4 id="文件链接"><a href="#文件链接" class="headerlink" title="文件链接"></a>文件链接</h4><p>在index.js中，有这么一段代码</p>
+<pre><code>const root = ReactDOM.createRoot(document.getElementById(&#39;root&#39;));
+root.render(
+  &lt;React.StrictMode&gt;
+    &lt;App /&gt;
+  &lt;/React.StrictMode&gt;
+);
+</code></pre>
+<p>意思是将id为root的组件中所有的内容都替换为<App /> 中生成的html代码</p>
+<p>App中的代码在App.js目录下</p>
+<pre><code>function App() &#123;
+  return (
+    &lt;div className=&quot;App&quot;&gt;
+      &lt;header className=&quot;App-header&quot;&gt;
+        &lt;img sr/c=&#123;logo&#125; className=&quot;App-logo&quot; alt=&quot;logo&quot; /&gt;
+        &lt;p&gt;
+          Edit &lt;code&gt;src/App.js&lt;/code&gt; and save to reload.
+        &lt;/p&gt;
+        &lt;a
+          className=&quot;App-link&quot;
+          href=&quot;https://reactjs.org&quot;
+          target=&quot;_blank&quot;
+          rel=&quot;noopener noreferrer&quot;
+        &gt;
+          Learn React
+        &lt;/a&gt;
+      &lt;/header&gt;
+    &lt;/div&gt;
+  );
+&#125;
+
+
+export default App; // 这行代码的意思是将App.js导出，所以能在其他js中import
+</code></pre>
+<p>而id为root的组件在public&#x2F;index.html</p>
+<p>body中只有这一行代码</p>
+<pre><code>&lt;div id=&quot;root&quot;&gt; &lt;/div&gt;
+</code></pre>
+<ul>
+<li>React中的App.js 中的类（class） 改成了className，其他格式不变</li>
+</ul>
+<h4 id="props"><a href="#props" class="headerlink" title="props"></a>props</h4><ul>
+<li><p>props代表外部所有属性的集合</p>
+</li>
+<li><p>props是一个对象，里面有一个children属性代表所有索引中的内容</p>
+<p>  <Button>abcdefg</Button> &#x2F;&#x2F; children &#x3D; abcdefg</p>
+</li>
+</ul>
+
       </section>
 
       
@@ -214,7 +316,7 @@
         <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
 </svg>
-        4
+        5
       </div>
     </div>
   </div>
@@ -259,7 +361,7 @@
   </div>
   <div class="widget-body">
     <div class="tags-cloud">
-      <a href="/tags/FAQs/" style="font-size: 15px;" class="tags-cloud-5">FAQs</a> <a href="/tags/Javascript/" style="font-size: 10px;" class="tags-cloud-0">Javascript</a> <a href="/tags/ROS/" style="font-size: 10px;" class="tags-cloud-0">ROS</a> <a href="/tags/SwiftUI/" style="font-size: 20px;" class="tags-cloud-10">SwiftUI</a>
+      <a href="/tags/FAQs/" style="font-size: 15px;" class="tags-cloud-5">FAQs</a> <a href="/tags/Javascript/" style="font-size: 10px;" class="tags-cloud-0">Javascript</a> <a href="/tags/ROS/" style="font-size: 10px;" class="tags-cloud-0">ROS</a> <a href="/tags/React/" style="font-size: 10px;" class="tags-cloud-0">React</a> <a href="/tags/SwiftUI/" style="font-size: 20px;" class="tags-cloud-10">SwiftUI</a>
     </div>
   </div>
 </section>
